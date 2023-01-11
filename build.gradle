@@ -1,0 +1,27 @@
+plugins {
+    id 'groovy'
+}
+
+group 'com.heavyweightsoftware.romannumeralconverter'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    implementation 'org.apache.pdfbox:pdfbox:3.0.0-alpha3'
+
+    testImplementation (
+            'org.apache.groovy:groovy-all:4.0.2',
+            'org.junit.jupiter:junit-jupiter-api:5.7.0',
+            'org.spockframework:spock-core:2.2-M1-groovy-4.0',
+            'org.codehaus.groovy:groovy-all:2.4.11'
+    )
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
