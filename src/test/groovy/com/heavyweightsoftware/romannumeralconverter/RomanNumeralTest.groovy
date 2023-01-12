@@ -3,15 +3,28 @@ package com.heavyweightsoftware.romannumeralconverter
 import spock.lang.Specification
 
 class RomanNumeralTest extends Specification {
-    def "ParseValue"() {
-        given: "An amount for testing"
-        int amt;
-
+    def "GetNumeralValue"() {
         expect:
-        amt == RomanNumeral.parseValue(String romnum)
+        amt == RomanNumeral.getNumeralValue((char) romNum)
 
         where:
-        romnum | amt
+        romNum | amt
+        'I' | 1
+        'V' | 5
+        'X' | 10
+        'L' | 50
+        'C' | 100
+        'D' | 500
+        'M' | 1000
+        "G" | 0
+    }
+
+    def "ParseValue"() {
+        expect:
+        amt == RomanNumeral.parseValue(romNum)
+
+        where:
+        romNum | amt
         "I" | 1
         "II" | 2
         "III" | 3
@@ -53,6 +66,7 @@ class RomanNumeralTest extends Specification {
         "LXXXV" | 85
         "XC" | 90
         "XCV" | 95
+        "IC" | 99
         "C" | 100
         "CV" | 105
         "CX" | 110
@@ -104,6 +118,7 @@ class RomanNumeralTest extends Specification {
         "MDCCC" | 1800
         "MDCCCLXXV" | 1875
         "MCML" | 1950
+        "MIM" | 1999
         "MMXXV" | 2025
         "MMC" | 2100
         "MMCLXXV" | 2175
