@@ -1,6 +1,5 @@
 package com.heavyweightsoftware.romannumeralconverter;
 
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -151,7 +150,7 @@ public class RomanNumeral {
                 sb.append(ROM_NUM_4);
                 num -= 4;
             }
-            else if (num >= 1) {
+            else {
                 sb.append(ROM_NUM_1);
                 num -= 1;
             }
