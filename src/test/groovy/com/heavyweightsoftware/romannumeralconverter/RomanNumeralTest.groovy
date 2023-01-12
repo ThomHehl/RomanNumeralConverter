@@ -66,7 +66,7 @@ class RomanNumeralTest extends Specification {
         "LXXXV" | 85
         "XC" | 90
         "XCV" | 95
-        "IC" | 99
+        "XCIX" | 99
         "C" | 100
         "CV" | 105
         "CX" | 110
@@ -118,7 +118,7 @@ class RomanNumeralTest extends Specification {
         "MDCCC" | 1800
         "MDCCCLXXV" | 1875
         "MCML" | 1950
-        "MIM" | 1999
+        "MCMXCIX" | 1999
         "MMXXV" | 2025
         "MMC" | 2100
         "MMCLXXV" | 2175
@@ -127,5 +127,116 @@ class RomanNumeralTest extends Specification {
         "MMCD" | 2400
         "MMCDLXXV" | 2475
         "MMDL" | 2550
+    }
+
+    def "ToString"() {
+        expect:
+        RomanNumeral romanNumeral = new RomanNumeral(romIn)
+        romOut == romanNumeral.toString()
+
+        where:
+        romIn | romOut
+        "I" | "I"
+        "II" | "II"
+        "III" | "III"
+        "IV" | "IV"
+        "V" | "V"
+        "VI" | "VI"
+        "VII" | "VII"
+        "VIII" | "VIII"
+        "IX" | "IX"
+        "X" | "X"
+        "XI" | "XI"
+        "XII" | "XII"
+        "XIII" | "XIII"
+        "XIV" | "XIV"
+        "XV" | "XV"
+        "XVI" | "XVI"
+        "XVII" | "XVII"
+        "XVIII" | "XVIII"
+        "XIX" | "XIX"
+        "XX" | "XX"
+        "XXI" | "XXI"
+        "XXII" | "XXII"
+        "XXIII" | "XXIII"
+        "XXIV" | "XXIV"
+        "XXV" | "XXV"
+        "XX" | "XX"
+        "XXV" | "XXV"
+        "XXX" | "XXX"
+        "XXXV" | "XXXV"
+        "XL" | "XL"
+        "XLV" | "XLV"
+        "L" | "L"
+        "LV" | "LV"
+        "LX" | "LX"
+        "LXV" | "LXV"
+        "LXX" | "LXX"
+        "LXXV" | "LXXV"
+        "LXXX" | "LXXX"
+        "LXXXV" | "LXXXV"
+        "XC" | "XC"
+        "XCV" | "XCV"
+        "XCIX" | "XCIX"
+        "C" | "C"
+        "CV" | "CV"
+        "CX" | "CX"
+        "CXV" | "CXV"
+        "CXX" | "CXX"
+        "CXXV" | "CXXV"
+        "CXXX" | "CXXX"
+        "CXXXV" | "CXXXV"
+        "CXL" | "CXL"
+        "C" | "C"
+        "CXXV" | "CXXV"
+        "CL" | "CL"
+        "CLXXV" | "CLXXV"
+        "CC" | "CC"
+        "CCXXV" | "CCXXV"
+        "CCL" | "CCL"
+        "CCLXXV" | "CCLXXV"
+        "CCC" | "CCC"
+        "CCCXXV" | "CCCXXV"
+        "CCCL" | "CCCL"
+        "CCCLXXV" | "CCCLXXV"
+        "CD" | "CD"
+        "CDXXV" | "CDXXV"
+        "CDL" | "CDL"
+        "CDLXXV" | "CDLXXV"
+        "D" | "D"
+        "DXXV" | "DXXV"
+        "DL" | "DL"
+        "DLXXV" | "DLXXV"
+        "DC" | "DC"
+        "DCXXV" | "DCXXV"
+        "DCL" | "DCL"
+        "DCLXXV" | "DCLXXV"
+        "DCC" | "DCC"
+        "DCCL" | "DCCL"
+        "DCCCXXV" | "DCCCXXV"
+        "CM" | "CM"
+        "CMLXXV" | "CMLXXV"
+        "ML" | "ML"
+        "MCXXV" | "MCXXV"
+        "MCC" | "MCC"
+        "MCCLXXV" | "MCCLXXV"
+        "MCCCL" | "MCCCL"
+        "MCDXXV" | "MCDXXV"
+        "MD" | "MD"
+        "MDLXXV" | "MDLXXV"
+        "MDCL" | "MDCL"
+        "MDCCXXV" | "MDCCXXV"
+        "MDCCC" | "MDCCC"
+        "MDCCCLXXV" | "MDCCCLXXV"
+        "MCML" | "MCML"
+        "MCMXCIX" | "MCMXCIX"
+        "MMXXV" | "MMXXV"
+        "MMC" | "MMC"
+        "MMCLXXV" | "MMCLXXV"
+        "MMCCL" | "MMCCL"
+        "MMCCCXXV" | "MMCCCXXV"
+        "MMCD" | "MMCD"
+        "MMCDLXXV" | "MMCDLXXV"
+        "MMDL" | "MMDL"
     }
 }
