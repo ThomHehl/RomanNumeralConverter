@@ -21,13 +21,13 @@ public class RomanNumeral {
     private static final Map<Character, Integer> characterValues = new HashMap<>();
 
     static {
-        characterValues.put('I', 1);
-        characterValues.put('V', 5);
-        characterValues.put('X', 10);
-        characterValues.put('L', 50);
-        characterValues.put('C', 100);
-        characterValues.put('D', 500);
-        characterValues.put('M', 1000);
+        characterValues.put(ROM_NUM_1.charAt(0), 1);
+        characterValues.put(ROM_NUM_5.charAt(0), 5);
+        characterValues.put(ROM_NUM_10.charAt(0), 10);
+        characterValues.put(ROM_NUM_50.charAt(0), 50);
+        characterValues.put(ROM_NUM_100.charAt(0), 100);
+        characterValues.put(ROM_NUM_500.charAt(0), 500);
+        characterValues.put(ROM_NUM_1000.charAt(0), 1000);
     }
 
     private int value;
