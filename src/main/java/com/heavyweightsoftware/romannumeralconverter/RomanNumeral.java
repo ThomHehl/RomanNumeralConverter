@@ -32,15 +32,28 @@ public class RomanNumeral {
 
     private int value;
 
+    /**
+     * Create a roman numeral from a String
+     * @param romanNumeral the roman numeral, e.g., "IX"
+     */
     public RomanNumeral(String romanNumeral) {
         value = parseValue(romanNumeral);
     }
 
+    /**
+     * Return the integer value
+     * @return the value
+     */
     public int getValue() {
         return value;
     }
 
-    public static int getNumeralValue(char romNum) {
+    /**
+     * Return the value of a single roman numeral character
+     * @param romNum a roman numeral character
+     * @return the int value or zero if not valid
+     */
+    private static int getNumeralValue(char romNum) {
         int result = 0;
 
         Integer val = characterValues.get(romNum);
@@ -51,6 +64,11 @@ public class RomanNumeral {
         return result;
     }
 
+    /**
+     * Parse a roman numeral String into an int
+     * @param romanNumeral the roman numeral
+     * @return the int value
+     */
     public static int parseValue(String romanNumeral) {
         int idx = 0;
         char ch;
@@ -79,6 +97,13 @@ public class RomanNumeral {
         return result;
     }
 
+    /**
+     * Compare to roman numeral characters
+     * @param c1 the first value
+     * @param c2 the second value
+     * @return an integer that is less than, equal to, or greater than zero as the first value is greater than, equal to, or less than
+     * second value.
+     */
     protected static int compare(char c1, char c2) {
         int val1 = getNumeralValue(c1);
         if (val1 == 0) {
@@ -97,6 +122,11 @@ public class RomanNumeral {
         return toString(value);
     }
 
+    /**
+     * Convert a value into a roman numeral
+     * @param val the value
+     * @return the roman numeral
+     */
     public static String toString(int val) {
         StringBuilder sb = new StringBuilder(10);
         int num = val;
